@@ -6949,6 +6949,9 @@ resetMainParameters = () => {
                 statData["CPU_Cores"] = getCPUNumCores();
                 statData["TF_Backend"] = tf.getBackend();
 
+                statData["Which_Brainchop"] = "bctest";
+                statData["Seq_Conv"] =  inferenceModelsList[$$("selectModel").getValue() - 1]["enableSeqConv"];                  
+
 
                 //-- Init
                 statData["Actual_Labels"] = Infinity;
