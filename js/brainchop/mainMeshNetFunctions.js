@@ -5072,6 +5072,7 @@ function convByOutputChannelAndInputSlicing(input, filter, biases, stride, pad, 
                                                                                         res.layers[i].dilationRate,
                                                                                         3); // important for memory use
                                   }
+                                tf.dispose(curTensor[i-1]);
                             } catch(err) {
 
                                   if( err.message === "Failed to compile fragment shader.") {
