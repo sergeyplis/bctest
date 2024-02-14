@@ -6792,7 +6792,7 @@ resetMainParameters = () => {
 
           let modelObject = {};
           // get model object data e.g. layers etc
-          model.then(function(res) {
+          model.then(async function(res) {
                 modelObject = res;
 
                 let batchInputShape = [];
@@ -6885,9 +6885,9 @@ resetMainParameters = () => {
                 tf.dispose(allSlices_2D);
 
                 // Nomalize MRI data to be from 0 to 1
-                slices_3d = normalizeVolumeData(slices_3d);
+                // slices_3d = normalizeVolumeData(slices_3d);
                 // Another normalize function needs specific models to be used
-                // -- slices_3d = await normalizeTensor(slices_3d);
+                slices_3d = await normalizeTensor(slices_3d);
 
 
                 let Preprocess_t = ((performance.now() - startTime)/1000).toFixed(4);
